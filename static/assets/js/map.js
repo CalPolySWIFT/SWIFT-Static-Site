@@ -3,17 +3,26 @@ jQuery(document).ready(function(){
 
     map = new GMaps({
         div: '#map',
-        lat: 51.451573,
-        lng: -2.595008,
+        lat: 34.0569172,
+        lng: -117.8217494,
     });
     map.addMarker({
-        lat: 51.451573,
-        lng: -2.595008,
+        lat: 34.0569172,
+        lng: -117.8217494,
         title: 'Address',      
         infoWindow: {
-            content: '<h5 class="title">College Green Campus</h5><p><span class="region">Address line goes here</span><br><span class="postal-code">Postcode</span><br><span class="country-name">Country</span></p>'
+            content: '<h5 class="title">Cal Poly Pomona</h5><p><span class="region">3801 W Temple Ave</span><br><span class="postal-code">Pomona, CA 91768</span><br><span class="country-name">United States</span></p>'
         }
         
+    });
+    map.addMarker({
+        lat: 34.0597805,
+        lng: -117.8196481,
+        title: 'Address',
+        infoWindow: {
+            content: '<h5 class="title">SWIFT Meeting Room @ Cal Poly Pomona</h5><p><span class="region">3801 W Temple Ave</span><br><span class="postal-code">Pomona, CA 91768</span><br><span class="country-name">United States</span></p>'
+        }
+
     });
 
 });
