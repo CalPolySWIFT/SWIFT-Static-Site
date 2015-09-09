@@ -1,0 +1,93 @@
+{% extends "layout.html" %}
+{% block content %}
+    <div class="page-wrapper">
+        <header class="page-heading clearfix">
+            <h1 class="heading-title pull-left">About</h1>
+
+            <div class="breadcrumbs pull-right">
+                <ul class="breadcrumbs-list">
+                    <li class="breadcrumbs-label">You are here:</li>
+                    <li><a href="index.html">Home</a><i class="fa fa-angle-right"></i></li>
+                    <li class="current">About</li>
+                </ul>
+            </div>
+            <!--//breadcrumbs-->
+        </header>
+        <div class="page-content">
+            <div class="row page-row">
+                <article class="welcome col-md-8 col-sm-7">
+                    <h3 class="title">Welcome to Cal Poly SWIFT</h3>
+
+                    <p><img class="img-responsive" src="static/assets/images/750x300-about.jpg" alt=""/></p>
+
+                    <p>SWIFT is a technology/security oriented student organization located at Cal Poly Pomona that
+                        started in 1994. We have members with majors such as Computer Science, Electrical and
+                        Computer Engineering, and Computer Information Systems. SWIFT has more than 70 active
+                        members, we serve the general campus community of all the CS,CIS and ECE majors. </p>
+
+                    <blockquote class="custom-quote">
+                        <p><i class="fa fa-quote-left"></i>Throughout the years SWIFT has kept current with the
+                            fluid pace of technology and industry. It is our goal to both continue these efforts, as
+                            well as expand and contribute back to the community. We teach the skills to use computer
+                            systems and the skills necessary to learn new systems. In an age when technology changes
+                            on a weekly basis, we strive to keep members informed and equipped to thrive in such an
+                            environment.</p>
+
+                        <p class="people"><span class="name">Mitchell Tamblyn</span><br><span class="title">Systems Administrator, SWIFT</span>
+                        </p>
+                    </blockquote>
+                    <p>
+                        SWIFT holds weekly general meetings with both in-house and external speakers. These meetings
+                        cover relevant topics in computer and technology industries. Live demos of software and
+                        hardware are common. In addition to the weekly meetings, SWIFT hosts a number of free
+                        workshops that teach a variety of skills including Linux installation, network security, and
+                        penetration testing. These workshops are hands-on and are designed to let members get
+                        hands-on experience with real technology. We also host social events such as a quarterly LAN
+                        party.
+                    </p>
+                    <ul class="custom-list-style">
+                        <li><i class="fa fa-check"></i>InstallFest</li>
+                        <li><i class="fa fa-check"></i>Technology Symposium</li>
+                        <li><i class="fa fa-check"></i>Red Team Workshops</li>
+                        <li><i class="fa fa-check"></i>Advanced Linux System Administration Seminar (ALSAS)</li>
+                        <li><i class="fa fa-check"></i>FragNite</li>
+                    </ul>
+                </article>
+                <!--//page-content-->
+                <aside class="page-sidebar  col-md-3 col-md-offset-1 col-sm-4 col-sm-offset-1">
+                    <section class="widget has-divider">
+                        <h3 class="title">Job Vacancies</h3>
+                        <ul class="job-list custom-list-style">
+                            <li><i class="fa fa-caret-right"></i><a href="#">Learning Support Assistant</a></li>
+                            <li><i class="fa fa-caret-right"></i><a href="#">Lecturer - Business Studies</a></li>
+                            <li><i class="fa fa-caret-right"></i><a href="#">Lecturer - Computer Science</a></li>
+                            <li><i class="fa fa-caret-right"></i><a href="#">Administrative Assistant</a></li>
+                        </ul>
+                        <a class="btn btn-theme" href="jobs.html">Find out more</a>
+                    </section>
+                    <!--//widget-->
+                    <section class="widget has-divider">
+                        <h3 class="title">Video tour</h3>
+                        <iframe class="iframe" src="//www.youtube.com/embed/Ks-_Mh1QhMc?rel=0&amp;wmode=transparent"
+                                frameborder="0" allowfullscreen=""></iframe>
+                    </section>
+                    <!--//widget-->
+                    <section class="widget">
+                        <h3 class="title">Contact</h3>
+
+                        <p>Suspendisse mollis neque augue, vitae malesuada mi dictum quis. Ut mollis purus vel orci
+                            aliquam sagittis. Aliquam erat volutpat. </p>
+
+                        <p class="tel"><i class="fa fa-phone"></i>Tel: +1(909)869-7659</p>
+
+                        <p class="email"><i class="fa fa-envelope"></i>Email: <a href="#">swift@cpp.edu</a></p>
+                    </section>
+                    <!--//widget-->
+                </aside>
+            </div>
+            <!--//page-row-->
+        </div>
+        <!--//page-content-->
+    </div>
+    <!--//page-->
+{% endblock %}
