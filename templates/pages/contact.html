@@ -1,0 +1,106 @@
+{% extends "layout.html" %}
+{% block content %}
+
+    <div class="page-wrapper">
+        <header class="page-heading clearfix">
+            <h1 class="heading-title pull-left">Contact</h1>
+
+            <div class="breadcrumbs pull-right">
+                <ul class="breadcrumbs-list">
+                    <li class="breadcrumbs-label">You are here:</li>
+                    <li><a href="index.html">Home</a><i class="fa fa-angle-right"></i></li>
+                    <li class="current">Contact</li>
+                </ul>
+            </div>
+            <!--//breadcrumbs-->
+        </header>
+        <div class="page-content">
+            <div class="row">
+                <article class="contact-form col-md-8 col-sm-7  page-row">
+                    <h3 class="title">Get in touch</h3>
+
+                    <p>We’d love to hear from you. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam ut
+                        erat magna. Aliquam porta sem a lacus imperdiet posuere. Integer semper eget ligula id
+                        eleifend. </p>
+
+                    <form>
+                        <div class="form-group name">
+                            <label for="name">Name</label>
+                            <input id="name" type="text" class="form-control" placeholder="Enter your name">
+                        </div>
+                        <!--//form-group-->
+                        <div class="form-group email">
+                            <label for="email">Email<span class="required">*</span></label>
+                            <input id="email" type="email" class="form-control" placeholder="Enter your email">
+                        </div>
+                        <!--//form-group-->
+                        <div class="form-group phone">
+                            <label for="phone">Phone</label>
+                            <input id="phone" type="tel" class="form-control" placeholder="Enter your contact number">
+                        </div>
+                        <!--//form-group-->
+                        <div class="form-group message">
+                            <label for="message">Message<span class="required">*</span></label>
+                            <textarea id="message" class="form-control" rows="6"
+                                      placeholder="Enter your message here..."></textarea>
+                        </div>
+                        <!--//form-group-->
+                        <button type="submit" class="btn btn-theme">Send message</button>
+                    </form>
+                </article>
+                <!--//contact-form-->
+                <aside class="page-sidebar  col-md-3 col-md-offset-1 col-sm-4 col-sm-offset-1">
+                    <section class="widget has-divider">
+                        <h3 class="title">Download Prospectus</h3>
+
+                        <p>Donec pulvinar arcu lacus, vel aliquam libero scelerisque a. Cras mi tellus, vulputate eu
+                            eleifend at, consectetur fringilla lacus. Nulla ut purus.</p>
+                        <a class="btn btn-theme" href="#"><i class="fa fa-download"></i>Download now</a>
+                    </section>
+                    <!--//widget-->
+
+                    <section class="widget has-divider">
+                        <h3 class="title">Postal Address</h3>
+
+                        <p class="adr">
+                                    <span class="adr-group">
+                                        <span class="street-address">SWIFT @ Cal Poly Pomona</span><br>
+                                        <span class="region">3801 West Temple Avenue</span><br>
+                                        <span class="postal-code">Pomona, California 91768</span><br>
+                                        <span class="country-name">US</span>
+                                    </span>
+                        </p>
+                    </section>
+                    <!--//widget-->
+
+                    <section class="widget">
+                        <h3 class="title">All Enquiries</h3>
+
+                        <p class="tel"><i class="fa fa-phone"></i>Tel: +1(909)869-7659</p>
+
+                        <p class="email"><i class="fa fa-envelope"></i>Email: <a href="#">swift@cpp.edu</a></p>
+                    </section>
+                </aside>
+                <!--//page-sidebar-->
+            </div>
+            <!--//page-row-->
+            <div class="page-row">
+                <article class="map-section">
+                    <h3 class="title">How to find us</h3>
+
+                    <div id="map"></div>
+                    <!--//map-->
+                </article>
+                <!--//map-->
+            </div>
+            <!--//page-row-->
+        </div>
+        <!--//page-content-->
+    </div><!--//page-wrapper-->
+{% endblock %}
+
+{% block added_javascript %}
+    <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=true"></script>
+    <script type="text/javascript" src="assets/plugins/gmaps/gmaps.js"></script>
+    <script type="text/javascript" src="assets/js/map.js"></script>
+{% endblock %}

@@ -1,0 +1,7 @@
+/* Makes the slide images behave nicely if their height is larger than 350px */
+.flexslider .slides img {
+    max-height: 350px;
+    height: 350px;
+    width: auto;
+    margin: auto;
+}
