@@ -1,4 +1,4 @@
-{% extends "layout.html" %}
+{% extends "layouts/layout.html" %}
 {% block content %}
     <div class="page-wrapper">
         <header class="page-heading clearfix">
@@ -54,36 +54,7 @@
                     </ul>
                 </article>
                 <!--//page-content-->
-                <aside class="page-sidebar  col-md-3 col-md-offset-1 col-sm-4 col-sm-offset-1">
-                    <section class="widget has-divider">
-                        <h3 class="title">Job Vacancies</h3>
-                        <ul class="job-list custom-list-style">
-                            <li><i class="fa fa-caret-right"></i><a href="#">Learning Support Assistant</a></li>
-                            <li><i class="fa fa-caret-right"></i><a href="#">Lecturer - Business Studies</a></li>
-                            <li><i class="fa fa-caret-right"></i><a href="#">Lecturer - Computer Science</a></li>
-                            <li><i class="fa fa-caret-right"></i><a href="#">Administrative Assistant</a></li>
-                        </ul>
-                        <a class="btn btn-theme" href="jobs.html">Find out more</a>
-                    </section>
-                    <!--//widget-->
-                    <section class="widget has-divider">
-                        <h3 class="title">Video tour</h3>
-                        <iframe class="iframe" src="//www.youtube.com/embed/Ks-_Mh1QhMc?rel=0&amp;wmode=transparent"
-                                frameborder="0" allowfullscreen=""></iframe>
-                    </section>
-                    <!--//widget-->
-                    <section class="widget">
-                        <h3 class="title">Contact</h3>
-
-                        <p>Suspendisse mollis neque augue, vitae malesuada mi dictum quis. Ut mollis purus vel orci
-                            aliquam sagittis. Aliquam erat volutpat. </p>
-
-                        <p class="tel"><i class="fa fa-phone"></i>Tel: +1(909)869-7659</p>
-
-                        <p class="email"><i class="fa fa-envelope"></i>Email: <a href="#">swift@cpp.edu</a></p>
-                    </section>
-                    <!--//widget-->
-                </aside>
+                {% include "sidebars/sidebar1.html" %}
             </div>
             <!--//page-row-->
         </div>
