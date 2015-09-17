@@ -3,7 +3,7 @@
 	ServerAlias test.calpolyswift.org
 	ServerAdmin swift@cpp.edu
 
-	WSGIDaemonProcess yourapplication user=user1 group=group1 threads=5
+	WSGIDaemonProcess staticsite user=www-data group=www-data threads=5
 	WSGIScriptAlias / /srv/http/CPS_Static_Site/CPS_Site.wsgi
 
 	<Directory /srv/http/CPS_Static_Site>
