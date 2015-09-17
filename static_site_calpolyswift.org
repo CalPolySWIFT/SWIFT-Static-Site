@@ -1,5 +1,5 @@
 <VirtualHost *>
-	ServerName test.calpolyswift.orgi
+	ServerName test.calpolyswift.org
 	ServerAlias test.calpolyswift.org
 	ServerAdmin swift@cpp.edu
 
