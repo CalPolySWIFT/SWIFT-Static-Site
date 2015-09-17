@@ -7,8 +7,9 @@
 	WSGIScriptAlias / /srv/http/CPS_Static_Site/CPS_Site.wsgi
 
 	<Directory /srv/http/CPS_Static_Site>
-		WSGIProcessGroup yourapplication
+		WSGIProcessGroup staticsite
 		WSGIApplicationGroup %{GLOBAL}
+		WSGIScriptReloading On
 		Order deny,allow
 		Allow from all
 	</Directory>
