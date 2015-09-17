@@ -1,0 +1,15 @@
+<VirtualHost *>
+	ServerName calpolyswift.orgi
+	ServerAlias www.calpolyswift.org
+	ServerAdmin swift@cpp.edu
+
+	WSGIDaemonProcess yourapplication user=user1 group=group1 threads=5
+	WSGIScriptAlias / /srv/http/CPS_Static_Site/CPS_Site.wsgi
+
+	<Directory /srv/http/CPS_Static_Site>
+		WSGIProcessGroup yourapplication
+		WSGIApplicationGroup %{GLOBAL}
+		Order deny,allow
+		Allow from all
+	</Directory>
+</VirtualHost>
