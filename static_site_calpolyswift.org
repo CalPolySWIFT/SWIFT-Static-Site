@@ -1,6 +1,6 @@
 <VirtualHost *>
-	ServerName calpolyswift.orgi
-	ServerAlias www.calpolyswift.org
+	ServerName test.calpolyswift.orgi
+	ServerAlias test.calpolyswift.org
 	ServerAdmin swift@cpp.edu
 
 	WSGIDaemonProcess yourapplication user=user1 group=group1 threads=5
