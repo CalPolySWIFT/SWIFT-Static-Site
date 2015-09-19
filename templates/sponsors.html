@@ -1,3 +1,23 @@
 {% extends "layout.html" %}
 {% block content %}
+    <div class="page-wrapper">
+        <header class="page-heading clearfix">
+            <h1 class="heading-title pull-left">Sponsors</h1>
+
+            <div class="breadcrumbs pull-right">
+                <ul class="breadcrumbs-list">
+                    <li class="breadcrumbs-label">You are here:</li>
+                    <li><a href="index.html">Home</a><i class="fa fa-angle-right"></i></li>
+                    <li class="current">Sponsors</li>
+                </ul>
+            </div>
+            <!--//breadcrumbs-->
+        </header>
+        <div class="page-content">
+            <h3 class="title">We would like to thank our generous sponsors for helping make SWIFT possible.</h3>
+            <section class="awards">
+                {% include "sponsors_list_1.html" %}
+            </section>
+        </div>
+    </div>
 {% endblock %}
