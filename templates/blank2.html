@@ -1,0 +1,24 @@
+{% extends "layout.html" %}
+{% block content %}
+    <div class="page-wrapper">
+        <header class="page-heading clearfix">
+            <h1 class="heading-title pull-left">Blank2</h1>
+
+            <div class="breadcrumbs pull-right">
+                <ul class="breadcrumbs-list">
+                    <li class="breadcrumbs-label">You are here:</li>
+                    <li><a href="index.html">Home</a><i class="fa fa-angle-right"></i></li>
+                    <li class="current">Blank2</li>
+                </ul>
+            </div>
+            <!--//breadcrumbs-->
+        </header>
+        <div class="page-content">
+            <div class="row page-row">
+                <article class="welcome col-md-8 col-sm-7">
+                </article>
+                {% include "sidebar1.html" %}
+            </div>
+        </div>
+    </div>
+{% endblock %}
