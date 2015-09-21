@@ -15,10 +15,11 @@
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
             <meta name="description" content="">
             <meta name="author" content="">
-            <meta name="keywords" content="{% block meta_keywords %}Security, System Administration, Network Administration, Hacking, Linux, Windows, Cryptography, Exploitation, Pentesting, Forensics, Incident Response, Reverse Engineering, Networking, Hardware, Arduino, Policy, Virtualization, Cal Poly Pomona, SWIFT, Students with an Interest in the Future of Technology{% block meta_keywords_additions %}{% endblock %}{% endblock %}">
+            <meta name="keywords"
+                  content="{% block meta_keywords %}Security, System Administration, Network Administration, Hacking, Linux, Windows, Cryptography, Exploitation, Pentesting, Forensics, Incident Response, Reverse Engineering, Networking, Hardware, Arduino, Policy, Virtualization, Cal Poly Pomona, SWIFT, Students with an Interest in the Future of Technology{% block meta_keywords_additions %}{% endblock %}{% endblock %}">
         {% endblock %}
         <link rel="shortcut icon" href="static/assets/images/favicon.ico">
-{#        <link href='http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700' rel='stylesheet' type='text/css'>#}
+        {#        <link href='http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700' rel='stylesheet' type='text/css'>#}
         <!-- Global CSS -->
         <link rel="stylesheet" href="static/assets/plugins/bootstrap/css/bootstrap.min.css">
         <!-- Plugins CSS -->
@@ -45,20 +46,8 @@
             <div class="top-bar">
                 <div class="container">
                     <ul class="social-icons col-md-6 col-sm-6 col-xs-12 hidden-xs">
-                        {% block social_icons %}
-                            <li><a href="https://twitter.com/calpolyswift"><i class="fa fa-twitter"></i></a></li>
-                            <li><a href="https://www.facebook.com/CalPolySWIFT"><i class="fa fa-facebook"></i></a></li>
-                            <li><a href="https://www.youtube.com/user/CalPolySWIFT?feature=guide"><i
-                                    class="fa fa-youtube"></i></a></li>
-                            <li><a href="https://webchat.freenode.net?channels=swift"><i
-                                    class="fa fa-wechat"></i></a></li>
-                            <li><a href="http://www.linkedin.com/groups/Students-Interest-in-Future-Technology-4108262"><i
-                                    class="fa fa-linkedin"></i></a></li>
-                            <li><a href="https://github.com/CalPolySWIFT"><i class="fa fa-github"></i></a></li>
-                            <li><a href="https://plus.google.com/101472957999296961401/"><i class="fa fa-google-plus"></i></a></li>
-                            <li><a href="#"><i class="fa fa-pinterest"></i></a></li>
-                            <li><a href="skype:?chat&blob=y06t8Lpx2BEFct4zIZktdGxT4u-O02p5g_-39t9Tc5KJLf1d8OcaF_xDrcjNq7-qlvL1pZBdX_-TIg"><i class="fa fa-skype"></i></a></li>
-                            <li class="row-end"><a href="#"><i class="fa fa-rss"></i></a></li>
+                        {% block social_icons_top %}
+                            {% include "social_icons.html" %}
                         {% endblock %}
                     </ul>
                     <!--//social-icons-->
@@ -75,8 +64,10 @@
                 <h1 class="logo col-md-7 col-sm-7">
                     <a href="index.html"><img id="logo" src="static/assets/images/SWIFT_Logo2.svg" height="60"
                                               alt="Logo">
-                    <h3>Students With an Interest in the Future of Technology</h3></a>
-                </h1><!--//logo-->
+
+                        <h3>Students With an Interest in the Future of Technology</h3></a>
+                </h1>
+                <!--//logo-->
                 <div class="info col-md-5 col-sm-5">
                     <ul class="menu-top navbar-right hidden-xs">
                         <li class="divider"><a href="index.html">Home</a></li>
@@ -122,7 +113,9 @@
                         <ul class="dropdown-menu">
                             <li><a href="eboard.html">Eboard</a></li>
                             <li><a href="membership.html">Membership</a></li>
-                            <li><a href="https://calpolypomona.collegiatelink.net/organization/telecommunications/DocumentLibrary/view/346974">Bylaws</a></li>
+                            <li>
+                                <a href="https://calpolypomona.collegiatelink.net/organization/telecommunications/DocumentLibrary/view/346974">Bylaws</a>
+                            </li>
                         </ul>
                     </li>
                     <li class="nav-item dropdown">
@@ -256,19 +249,9 @@
                 <small class="copyright col-md-6 col-sm-12 col-xs-12">Copyright @ 2015 SWIFT | Website
                     template by <a href="#">3rd Wave Media</a></small>
                 <ul class="social pull-right col-md-6 col-sm-12 col-xs-12">
-                    <li><a href="https://twitter.com/calpolyswift"><i class="fa fa-twitter"></i></a></li>
-                    <li><a href="https://www.facebook.com/CalPolySWIFT"><i class="fa fa-facebook"></i></a></li>
-                    <li><a href="https://www.youtube.com/user/CalPolySWIFT?feature=guide"><i class="fa fa-youtube"></i></a>
-                    </li>
-                    <li><a href="https://webchat.freenode.net?channels=swift"><i
-                            class="fa fa-wechat"></i></a></li>
-                    <li><a href="http://www.linkedin.com/groups/Students-Interest-in-Future-Technology-4108262"><i
-                            class="fa fa-linkedin"></i></a></li>
-                    <li><a href="https://github.com/CalPolySWIFT"><i class="fa fa-github"></i></a></li>
-                    <li><a href="https://plus.google.com/101472957999296961401/"><i class="fa fa-google-plus"></i></a></li>
-                    <li><a href="#"><i class="fa fa-pinterest"></i></a></li>
-                    <li><a href="skype:?chat&blob=y06t8Lpx2BEFct4zIZktdGxT4u-O02p5g_-39t9Tc5KJLf1d8OcaF_xDrcjNq7-qlvL1pZBdX_-TIg"><i class="fa fa-skype"></i></a></li>
-                    <li class="row-end"><a href="#"><i class="fa fa-rss"></i></a></li>
+                    {% block social_icons_bottom %}
+                        {% include "social_icons.html" %}
+                    {% endblock %}
                 </ul>
                 <!--//social-->
             </div>
