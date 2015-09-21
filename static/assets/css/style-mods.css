@@ -5,3 +5,7 @@
     width: auto;
     margin: auto;
 }
+
+.home-page .testimonials .carousel .item {
+    min-height: 150px;
+}
