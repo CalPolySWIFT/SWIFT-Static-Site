@@ -1,0 +1,12 @@
+<section class="events">
+    <h1 class="section-heading text-highlight"><span class="line">Events</span></h1>
+
+    <div class="section-content">
+        {% autoescape false %}
+        {{ get_calendar() }}
+        {% endautoescape %}
+        <!--event-item-->
+        <a class="read-more" href="events.html">All events<i class="fa fa-chevron-right"></i></a>
+    </div>
+    <!--//section-content-->
+</section>
