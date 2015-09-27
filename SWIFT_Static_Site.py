@@ -65,7 +65,9 @@ if __name__ == '__main__':
         from logging.handlers import SMTPHandler
 
         ADMINS = ['fragtastic69@gmail.com']
-        mail_handler = SMTPHandler('127.0.0.1', 'noreply@calpolyswift.org', ADMINS, 'SWIFT Static Site Failed')
+        mail_handler = SMTPHandler(('smtp.gmail.com', 587), 'noreply@calpolyswift.org', ADMINS,
+                                   'SWIFT Static Site Failed',
+                                   credentials=("noreply@calpolyswift.org", "PtgmbmSoGQH1q6CdZ6zo"), secure=())
         mail_handler.setLevel(logging.WARNING)
         app.logger.addHandler(mail_handler)
     app.run(host='0.0.0.0')
