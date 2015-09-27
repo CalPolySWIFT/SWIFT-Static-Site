@@ -3,7 +3,7 @@ import urllib
 import json
 
 app = Flask(__name__)
-app.debug = False
+app.debug = True
 
 
 @app.route('/')
@@ -17,7 +17,7 @@ def page(page):
 
 
 def get_calendar():
-    response = urllib.request.urlopen(
+    response = urllib.urlopen(
         "https://www.googleapis.com/calendar/v3/calendars/calpolyswift.org_20ccnpmk81dvsn70peppejgf48%40group.calendar.google.com/events?maxResults=5&timeMin=2015-09-05T07%3A23%3A12.000Z&ctz=America/Los_Angeles&singleEvents=true&orderBy=startTime&key=AIzaSyBNlYH01_9Hc5S1J9vuFmu2nUqBZJNAXxs").read().decode(
         'utf-8')
     jdata = json.loads(response)
