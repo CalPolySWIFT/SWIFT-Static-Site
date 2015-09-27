@@ -60,14 +60,4 @@ def error_500(error):
 
 
 if __name__ == '__main__':
-    if not app.debug:
-        import logging
-        from logging.handlers import SMTPHandler
-
-        ADMINS = ['fragtastic69@gmail.com']
-        mail_handler = SMTPHandler(('smtp.gmail.com', 587), 'noreply@calpolyswift.org', ADMINS,
-                                   'SWIFT Static Site Failed',
-                                   credentials=("noreply@calpolyswift.org", "PtgmbmSoGQH1q6CdZ6zo"), secure=())
-        mail_handler.setLevel(logging.WARNING)
-        app.logger.addHandler(mail_handler)
     app.run(host='0.0.0.0')
