@@ -4,6 +4,8 @@ https://calpolyswift.org
 Suggested IDE is PyCharm.
 
 ## Requirements
+python 2.7
+
 python-flask
 
 libapache2-mod-wsgi
