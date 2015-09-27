@@ -64,7 +64,7 @@ if __name__ == '__main__':
         import logging
         from logging.handlers import SMTPHandler
 
-        ADMINS = ['fragtastic@gmail.com']
+        ADMINS = ['fragtastic69@gmail.com']
         mail_handler = SMTPHandler('127.0.0.1', 'noreply@calpolyswift.org', ADMINS, 'SWIFT Static Site Failed')
         mail_handler.setLevel(logging.WARNING)
         app.logger.addHandler(mail_handler)
