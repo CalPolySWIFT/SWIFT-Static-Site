@@ -11,12 +11,18 @@ def index():
     return render_template("index.html")
 
 
-@app.route('/<page>')
+@app.route('/<page>.html')
 def page(page):
-    if ".html" not in page:
-        page += ".html"
-    return render_template(page)
+    return render_template(page + ".html")
 
+
+@app.route('/membership')
+def membership():
+    return render_template("membership.html")
+
+@app.route('/calendar')
+def calendar():
+    return render_template("calendar.html")
 
 def get_calendar():
     try:
