@@ -23,26 +23,41 @@ def get_calendar():
     jdata = json.loads(response)
     hdata = ""
     for item in jdata['items']:
-        hdata += "<div class=\"event-item\">"
-        hdata += "<p class=\"date-label\">"
-        date = item['start']['dateTime'].split("T", 1)
-        time = date[1].split("-", 1)
-        timeEnd = time[1]
-        time = time[0]
-        date = date[0].split("-")
-        month = date[1]
-        day = date[2]
-        year = date[0]
-        # 2015-09-29T12:00:00-07:00
-        hdata += "<span class=\"month\">" + month + "</span>"
-        hdata += "<span class=\"date-number\">" + day + "</span>"
-        hdata += "</p>"
-        hdata += "<div class=\"details\">"
-        hdata += "<h2 class=\"title\">" + item['summary'] + "</h2>"
-        hdata += "<p class=\"time\"><i class=\"fa fa-clock-o\"></i>" + time + "</p>"
-        # hdata += "<p class=\"location\"><i class=\"fa fa-map-marker\"></i>"+item['location']+"</p>"
-        hdata += "</div>"
-        hdata += "</div>"
+        try:
+            # 'dateTime' 2015-09-29T12:00:00-07:00
+            # 'date' 2015-09-29
+            time = "TBD"
+            startDate = item['start'].get('dateTime', None)
+            if startDate is None:
+                startDate = item['start'].get('date', "TBD-TBD-TBD")
+            else:
+                startDate = startDate.split("T", 1)
+                time = startDate[1].split("-", 1)[0]
+                startDate = startDate[0]
+            print(startDate)
+            # Date processing
+            startDate = startDate.split("-")
+            month = startDate[1]
+            day = startDate[2]
+            year = startDate[0]
+            summary = item.get('summary', "TBD")
+            description = item.get('description', None)
+            tdata = "<div class=\"event-item\">"
+            tdata += "<p class=\"date-label\">"
+            tdata += "<span class=\"month\">" + month + "</span>"
+            tdata += "<span class=\"date-number\">" + day + "</span>"
+            tdata += "</p>"
+            tdata += "<div class=\"details\">"
+            tdata += "<h2 class=\"title\">" + summary + "</h2>"
+            if description:
+                tdata += "<p class=\"description\">" + description + "</p>"
+            tdata += "<p class=\"time\"><i class=\"fa fa-clock-o\"></i>" + time + "</p>"
+            # hdata += "<p class=\"location\"><i class=\"fa fa-map-marker\"></i>"+item['location']+"</p>"
+            tdata += "</div>"
+            tdata += "</div>"
+            hdata += tdata
+        except:
+            continue
     return hdata
 
 
