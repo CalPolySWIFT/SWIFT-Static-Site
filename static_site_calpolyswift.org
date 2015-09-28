@@ -1,6 +1,6 @@
 <VirtualHost *:443>
-	ServerName test.calpolyswift.org
-	ServerAlias test.calpolyswift.org
+	ServerName calpolyswift.org
+	ServerAlias www.calpolyswift.org
 	ServerAdmin swift@cpp.edu
 
 	WSGIDaemonProcess SWIFT-Static-Site user=www-data group=www-data threads=5
