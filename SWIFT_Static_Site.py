@@ -42,6 +42,7 @@ def get_calendar():
             year = startDate[0]
             summary = item.get('summary', "TBD")
             description = item.get('description', None)
+            location = item.get('location', None)
             tdata = "<div class=\"event-item\">"
             tdata += "<p class=\"date-label\">"
             tdata += "<span class=\"month\">" + month + "</span>"
@@ -52,7 +53,8 @@ def get_calendar():
             if description:
                 tdata += "<p class=\"description\">" + description + "</p>"
             tdata += "<p class=\"time\"><i class=\"fa fa-clock-o\"></i>" + time + "</p>"
-            # hdata += "<p class=\"location\"><i class=\"fa fa-map-marker\"></i>"+item['location']+"</p>"
+            if location:
+                tdata += "<p class=\"location\"><i class=\"fa fa-map-marker\"></i>"+item['location']+"</p>"
             tdata += "</div>"
             tdata += "</div>"
             hdata += tdata
