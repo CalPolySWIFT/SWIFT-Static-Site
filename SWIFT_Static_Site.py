@@ -13,6 +13,8 @@ def index():
 
 @app.route('/<page>')
 def page(page):
+    if ".html" not in page:
+        page += ".html"
     return render_template(page)
 
 
