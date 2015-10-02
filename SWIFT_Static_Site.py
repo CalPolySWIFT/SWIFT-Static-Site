@@ -1,6 +1,7 @@
 from flask import Flask, render_template
 import urllib
 import json
+import datetime
 
 app = Flask(__name__)
 app.debug = True
@@ -26,8 +27,9 @@ def calendar():
 
 def get_calendar():
     try:
+        today = datetime.date.today()
         response = urllib.urlopen(
-            "https://www.googleapis.com/calendar/v3/calendars/calpolyswift.org_20ccnpmk81dvsn70peppejgf48%40group.calendar.google.com/events?maxResults=5&timeMin=2015-09-05T07%3A23%3A12.000Z&ctz=America/Los_Angeles&singleEvents=true&orderBy=startTime&key=AIzaSyBNlYH01_9Hc5S1J9vuFmu2nUqBZJNAXxs").read().decode(
+            "https://www.googleapis.com/calendar/v3/calendars/calpolyswift.org_20ccnpmk81dvsn70peppejgf48%40group.calendar.google.com/events?maxResults=5&timeMin="+str(today.year)+"-"+str(today.month)+"-"+str(today.day)+"T07%3A23%3A12.000Z&ctz=America/Los_Angeles&singleEvents=true&orderBy=startTime&key=AIzaSyBNlYH01_9Hc5S1J9vuFmu2nUqBZJNAXxs").read().decode(
             'utf-8')
         jdata = json.loads(response)
         hdata = ""
