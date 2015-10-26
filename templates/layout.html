@@ -307,6 +307,10 @@
     {% block added_javascript %}{% endblock %}
     <script type="text/javascript" src="static/assets/js/main.js"></script>
 {% endblock %}
+
+{% block google_analytics %}
+    {% include "google_analytics.html" %}
+{% endblock %}
 </body>
 </html>
 
