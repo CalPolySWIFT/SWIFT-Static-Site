@@ -41,6 +41,7 @@ def get_calendar():
                 startDate = item['start'].get('dateTime', None)
                 if startDate is None:
                     startDate = item['start'].get('date', "TBD-TBD-TBD")
+                    time = item['start'].get('date', "TBD-TBD-TBD") + ' to ' + item['end'].get('date', "TBD-TBD-TBD")
                 else:
                     startDate = startDate.split("T", 1)
                     time = startDate[1].split("-", 1)[0]
