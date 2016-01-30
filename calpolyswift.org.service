@@ -1,0 +1,13 @@
+[Unit]
+Description=Gunicorn instance to serve calpolyswift.org
+After=network.target
+
+[Service]
+User=www-data
+Group=www-data
+WorkingDirectory=/srv/http/SWIFT-Static-Site
+Environment="PATH=/srv/http/SWIFT-Static-Site/env/bin"
+ExecStart=/srv/http/SWIFT-Static-Site/env/bin/gunicorn --pid=/srv/http/SWIFT-Static-Site/gunicorn.pid --log-file=/srv/http/SWIFT-Static-Site/gunicorn.log --chdir /srv/http/SWIFT-Static-Site --workers 4 --bind 127.0.0.1:8000 -m 007 SWIFT_Static_Site:app
+
+[Install]
+WantedBy=multi-user.target
