@@ -4,7 +4,7 @@
 	ServerAdmin swift@cpp.edu
 
 	WSGIDaemonProcess SWIFT-Static-Site user=www-data group=www-data threads=5
-	WSGIScriptAlias / /srv/http/SWIFT-Static-Site/SWIFT-Static-Site.wsgi
+	WSGIScriptAlias / /srv/http/SWIFT-Static-Site/apache/SWIFT-Static-Site.wsgi
 
 	<Directory /srv/http/SWIFT-Static-Site>
 		WSGIProcessGroup SWIFT-Static-Site
