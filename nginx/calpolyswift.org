@@ -1,16 +1,15 @@
 server {
 	listen 80 default_server;
 	listen [::]:80 default_server;
+	server_name calpolyswift.org www.calpolyswift.org;
+	return 301 https://$host$request_uri;
+}
 
+server {
 	listen 443 ssl default_server;
 	listen [::]:443 ssl default_server;
 
     include snippets/ssl_certs.conf;
-
-
-    if ($ssl_protocol = "") {
-        rewrite ^ https://$server_name$request_uri? permanent;
-    }
 
 	root /srv/http/SWIFT-Static-Site;
 
