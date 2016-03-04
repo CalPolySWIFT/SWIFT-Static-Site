@@ -9,12 +9,15 @@ app.debug = True
 
 @app.route('/')
 def index():
-    return render_template("index.html")
+    return page("index")
 
 
 @app.route('/<page>.html')
 def page(page):
-    return render_template(page + ".html")
+    if os.path.exists("templates/" + page + ".html"):
+        return render_template(page + ".html")
+    else:
+        abort(404)
 
 
 @app.route('/membership')
