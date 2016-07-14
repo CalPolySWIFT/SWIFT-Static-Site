@@ -27,6 +27,9 @@ server {
     }
 
 	location /static {
+	    expires 168h; # cache for a week on all static resources
+            add_header Pragma public;
+            add_header Cache-Control "public, must-revalidate, proxy-revalidate";
 	    alias /srv/http/SWIFT-Static-Site/static;
     }
 }
