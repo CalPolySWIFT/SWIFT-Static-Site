@@ -37,7 +37,7 @@ def get_calendar():
             'utf-8')
         jdata = json.loads(response)
         hdata = ""
-        for item in jdata['items']:
+        for item in jdata['items'][:3]:
             try:
                 # 'dateTime' 2015-09-29T12:00:00-07:00
                 # 'date' 2015-09-29
