@@ -10,6 +10,9 @@ python-flask
 
 libapache2-mod-wsgi
 
+## Development Warnings
+When using PyCharm the working directory option must be set to the root of the project, otherwise everything is just 404.
+
 ## Deployment Instructions
 Simlink from sites-enabled to the VirtualHost file included.
 
@@ -19,6 +22,9 @@ Until a github webhook is added just:
 cd /srv/http/SWIFT-Static-Site
 
 git pull
+
+### Docker
+Docker image can be updated with `docker-compose restart swift-static-site`. Image internally uses git on boot to update.
 
 ## Production Warnings
 Set debug=false in production.
