@@ -19,10 +19,6 @@ Simlink from sites-enabled to the VirtualHost file included.
 ## Update Instructions
 Webhook should automatically restart the container and fetch the latest files.
 
-~~Until a github webhook is added just:~~\
-~~cd /srv/http/SWIFT-Static-Site~~\
-~~git pull~~
-
 ### Docker
 Docker image can be updated with `docker-compose restart swift-static-site`. Image internally uses git on boot to update.
 
