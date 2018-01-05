@@ -1,16 +1,17 @@
-function get_calender() {
+function get_calendar() {
 	var today = new Date();
 	let baseurl = "https://www.googleapis.com/calendar/v3/calendars/calpolyswift.org_20ccnpmk81dvsn70peppejgf48%40group.calendar.google.com/events?maxResults=5&timeMin="+today.getFullYear()+"-"+(today.getMonth()+1)+"-"+today.getDate()+"T07%3A23%3A12.000Z&ctz=America/Los_Angeles&singleEvents=true&orderBy=startTime&key=AIzaSyBNlYH01_9Hc5S1J9vuFmu2nUqBZJNAXxs";
 
-	console.log('Fetching calendar from: ', baseurl);
+	//console.log('Fetching calendar from: ', baseurl);
 
 	fetch(baseurl)
 	.then(res => res.json())
 	.then((out) => {
-		console.log('Checkout this JSON! ', out);
 		var el = document.getElementById("event-list");
 		for (item in out['items']) {
-			console.log(item);
+			if (item > 3) {
+				break;
+			}
 			var _time = "TBD";
 			var _startDate = out['items'][item]['start']['dateTime'] || "YYYY-MM-DDTHH:MM:SS-OH:OM"
 			_startDate = _startDate.split('T')
@@ -22,7 +23,7 @@ function get_calender() {
 			var _summary = out['items'][item]['summary'] || "TBD"
 			var _description = out['items'][item]['description']
 			var _location = out['items'][item]['location']
-			console.log(_time, _year, _month, _day, _summary, _description, _location);
+			//console.log(_time, _year, _month, _day, _summary, _description, _location);
 
 			var e = document.createElement("div");
 			e.setAttribute("class", "event-item");
@@ -74,4 +75,4 @@ function get_calender() {
 	.catch(err => { throw err });
 }
 
-get_calender();
+get_calendar();
