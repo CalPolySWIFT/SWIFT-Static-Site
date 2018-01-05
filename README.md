@@ -1,7 +1,7 @@
 # SWIFT Static Site
-https://calpolyswift.org
+https://www.calpolyswift.org
 
-Currently switching over to using jekyll rather than flask
+Current website converted over to using Jekyll.
 
 ## Requirements
 jekyll
