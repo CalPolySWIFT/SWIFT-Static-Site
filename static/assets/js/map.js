@@ -29,7 +29,7 @@ jQuery(document).ready(function(){
         lng: -117.819747,
         title: 'Address',
         infoWindow: {
-            Content: '<h5 class="title">SWIFT Telecom Lab: CLA 98C 4-36 @ Cal Poly Pomona</h5><p><span class="region">3801 W Temple Ave</span><br><span class="postal-code">Pomona, CA 91768</span><br><span class="country-name">United States</span></p>'
+            Content: '<h5 class="title">SWIFT Telecom Lab: CLA 98 C4-36 @ Cal Poly Pomona</h5><p><span class="region">3801 W Temple Ave</span><br><span class="postal-code">Pomona, CA 91768</span><br><span class="country-name">United States</span></p>'
         }
     });
 
