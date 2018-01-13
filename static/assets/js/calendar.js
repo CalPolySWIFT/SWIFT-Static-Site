@@ -12,11 +12,15 @@ function get_calendar() {
 			if (item > 3) {
 				break;
 			}
-			var _time = "TBD";
-			var _startDate = out['items'][item]['start']['dateTime'] || "YYYY-MM-DDTHH:MM:SS-OH:OM"
-			_startDate = _startDate.split('T')
-			_time = _startDate[1].split('-')[0]
-			_startDate = _startDate[0].split('-')
+			var _time = null;
+			var _startDate = out['items'][item]['start']['dateTime'] || out['items'][item]['start']['date']
+			if (_startDate.includes('T')) {
+				_startDate = _startDate.split('T')
+				_time = _startDate[1].split('-')[0]
+				_startDate = _startDate[0].split('-')
+			} else {
+				_startDate = _startDate.split('-')
+			}
 			var _year = _startDate[0]
 			var _month = _startDate[1]
 			var _day = _startDate[2]
@@ -55,10 +59,12 @@ function get_calendar() {
 				des.appendChild(document.createTextNode(_description));
 				dt.appendChild(des);
 			}
-			var timep = document.createElement("p");
-			timep.setAttribute("class", "time");
-			timep.innerHTML = "<i class=\"fa fa-clock-o\"></i>" + _time;
-			dt.appendChild(timep);
+			if (_time) {
+				var timep = document.createElement("p");
+				timep.setAttribute("class", "time");
+				timep.innerHTML = "<i class=\"fa fa-clock-o\"></i>" + _time;
+				dt.appendChild(timep);
+			}
 			if (_location) {
 				var loc = document.createElement("p");
 				loc.setAttribute("class", "location");
